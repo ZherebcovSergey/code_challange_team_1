@@ -1,7 +1,6 @@
 <?php
 
 function solution($S) {
-
 	if (empty($S) || $S == "") {
 		return true;
 	}
