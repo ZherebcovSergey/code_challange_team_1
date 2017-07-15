@@ -18,13 +18,9 @@ function solution($S) {
 		"(" => ")",
 	);
 	for ($i = 0; $i < $strlen; $i++) {
-		if ($S[$i] == "{" || $S[$i] == "[" || $S[$i] == "(") {
+		if (isset($close[$S[$i]])) {
 			array_push($open, $S[$i]);
 		} else {
-			if (empty($open)) {
-				return false;
-			}
-
 			if ($close[array_pop($open)] != $S[$i]) {
 				return false;
 			}
