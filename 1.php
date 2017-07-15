@@ -6,9 +6,8 @@ function solution($S) {
 		return true;
 	}
 
-	$brackets = str_split($S);
-	$count = count($brackets);
-	if ($count % 2 > 0) {
+	$strlen = strlen($S);
+	if ($strlen % 2 > 0) {
 		return false;
 	}
 
@@ -18,15 +17,15 @@ function solution($S) {
 		"[" => "]",
 		"(" => ")",
 	);
-	for ($i = 0; $i < $count; $i++) {
-		if ($brackets[$i] == "{" || $brackets[$i] == "[" || $brackets[$i] == "(") {
-			array_push($open, $brackets[$i]);
+	for ($i = 0; $i < $strlen; $i++) {
+		if ($S[$i] == "{" || $S[$i] == "[" || $S[$i] == "(") {
+			array_push($open, $S[$i]);
 		} else {
 			if (empty($open)) {
 				return false;
 			}
 
-			if ($close[end($open)] == $brackets[$i]) {
+			if ($close[end($open)] == $S[$i]) {
 				array_pop($open);
 			} else {
 				return false;
