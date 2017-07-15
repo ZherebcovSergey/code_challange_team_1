@@ -25,9 +25,7 @@ function solution($S) {
 				return false;
 			}
 
-			if ($close[end($open)] == $S[$i]) {
-				array_pop($open);
-			} else {
+			if ($close[array_pop($open)] != $S[$i]) {
 				return false;
 			}
 
