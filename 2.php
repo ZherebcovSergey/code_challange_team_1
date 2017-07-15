@@ -12,21 +12,17 @@ function solution($A,$B) {
 			else {
 				while (!empty($stack)) {
 					$tmpStack = end($stack);
-					if($A[$tmpStack]>$A[$i]) {
-						$life = false;
-						break;
-					}
+					if($tmpStack>$A[$i]) break;
 					else {
-						$life = true;
 						array_pop($stack);
 						$stackCount--;
 					}
 				}
-				if($life) $topCount++;
+				if(empty($stack)) $topCount++;
 			}
 		}
 		else {
-			$stack[] = $i;
+			$stack[] = $A[$i];
 			$stackCount++;
 		}
 	}
