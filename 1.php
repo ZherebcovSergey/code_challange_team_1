@@ -43,6 +43,8 @@ $arrS = array(
 	"{[()()]}",
 	"([)()]",
 	"((){])[]",
+	"[",
+	"]",
 );
 
 foreach ($arrS as $key => $value) {
