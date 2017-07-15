@@ -20,7 +20,8 @@ function solution($S) {
 		if (isset($close[$S[$i]])) {
 			array_push($open, $S[$i]);
 		} else {
-			if ($close[array_pop($open)] != $S[$i]) {
+			$index = array_pop($open);
+			if (!isset($close[$index]) || $close[$index] != $S[$i]) {
 				return 0;
 			}
 
@@ -44,9 +45,12 @@ $arrS = array(
 	"((){])[]",
 	"[",
 	"]",
+	"((((()))))",
+	"(((((())))))",
+	"((((()))))))",
 );
 
 foreach ($arrS as $key => $value) {
 	$res = solution($value);
-	echo $key . " => " . (int) $res . "\n";
+	echo $key . " => " . $value . " => " . (int) $res . "\n";
 }
