@@ -35,6 +35,7 @@ $Harr = array(
 	2=>array(9,8,7,6,5,4,3,2,1),#9
 	3=>array(9,8,7,6,5,5,6,7,8),#8
 	4=>array(5,7,9,8,9,8,9,8,7),#6
+	5=>array(4,5,6,7,8,8,7,4,2),#6
 );
 foreach ($Harr as $key => $value) {
 	$res = solution($value);
