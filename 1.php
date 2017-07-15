@@ -2,12 +2,12 @@
 
 function solution($S) {
 	if (empty($S) || $S == "") {
-		return true;
+		return 1;
 	}
 
 	$strlen = strlen($S);
 	if ($strlen % 2 > 0) {
-		return false;
+		return 0;
 	}
 
 	$open = array();
@@ -21,15 +21,15 @@ function solution($S) {
 			array_push($open, $S[$i]);
 		} else {
 			if ($close[array_pop($open)] != $S[$i]) {
-				return false;
+				return 0;
 			}
 
 		}
 	}
 	if (empty($open)) {
-		return true;
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 
 }
